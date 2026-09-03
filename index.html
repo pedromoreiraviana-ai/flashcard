@@ -1,150 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards</title>
+    <title>Flashcards de Astronomia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Flashcards</h1>
+    <header class="cabecalho">
+        <h1>Flashcards de Astronomia</h1>
 
-    <div class="container">
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#flashcards">Flashcards</a>
+            <a href="#acessibilidade">Acessibilidade</a>
+        </nav>
+    </header>
 
-        <!-- EVOLUÇÃO ESTELAR 1 -->
-        <div class="flashcard">
-            <div class="card">
+    <main id="inicio">
 
-                <div class="frente">
-                    <h2>Pergunta</h2>
+        <section class="introducao">
+            <h2>Estude evolução estelar e elementos químicos</h2>
+            <p>
+                Clique em um cartão para revelar a resposta.
+                Você também pode usar os controles de acessibilidade.
+            </p>
+        </section>
 
-                    <img src="ciclo-de-vida-estelar2.jpg" alt="Imagem de uma estrela">
+        <section class="acessibilidade" id="acessibilidade"
+            aria-labelledby="titulo-acessibilidade">
 
-                    <p>O que é evolução estelar?</p>
-                </div>
+            <h2 id="titulo-acessibilidade">Acessibilidade</h2>
 
-                <div class="verso">
-                    <h2>Evolução das estrelas</h2>
+            <div class="controles">
+                <button class="botao-controle" id="btnAumentaTexto">
+                    Aumentar texto
+                </button>
 
-                    <p>
-                        É o conjunto de mudanças que uma estrela sofre durante sua vida,
-                        desde sua formação até seu estágio final.
-                    </p>
-                </div>
+                <button class="botao-controle" id="btnDiminuiTexto">
+                    Diminuir texto
+                </button>
 
+                <button class="botao-controle" id="btnRestauraTexto">
+                    Restaurar texto
+                </button>
+
+                <button class="botao-controle" id="btnOuvir">
+                    Ouvir
+                </button>
             </div>
-        </div>
 
+            <p id="statusLeitura" class="status-leitura" aria-live="polite"></p>
+        </section>
 
-        <!-- EVOLUÇÃO ESTELAR 2 -->
-        <div class="flashcard">
-            <div class="card">
+        <section class="flashcards" id="flashcards"
+            aria-labelledby="titulo-flashcards">
 
-                <div class="frente">
-                    <h2>Pergunta</h2>
+            <h2 id="titulo-flashcards">Flashcards</h2>
 
-                    <img src="nebulosa.jpg" alt="Imagem de uma nebulosa">
+            <!-- EVOLUÇÃO ESTELAR 1 -->
+            <article class="flashcard">
+                <div class="card">
 
-                    <p>Como uma estrela se forma?</p>
+                    <div class="frente">
+                        <span class="tipo-card">Pergunta</span>
+
+                        <h3>O que é evolução estelar?</h3>
+
+                        <img src="ciclo-de-vida-estelar2.jpg"
+                            alt="Imagem representando o ciclo de vida de uma estrela">
+
+                        <p>O que é evolução estelar?</p>
+                    </div>
+
+                    <div class="verso">
+                        <span class="tipo-card">Resposta</span>
+
+                        <h3>Evolução das estrelas</h3>
+
+                        <p>
+                            É o conjunto de mudanças que uma estrela sofre durante sua vida,
+                            desde sua formação até seu estágio final.
+                        </p>
+                    </div>
+
                 </div>
+            </article>
 
-                <div class="verso">
-                    <h2>Formação estelar</h2>
+            <!-- EVOLUÇÃO ESTELAR 2 -->
+            <article class="flashcard">
+                <div class="card">
 
-                    <p>
-                        Uma estrela se forma a partir do colapso de uma nuvem de gás e poeira,
-                        principalmente hidrogênio, devido à gravidade.
-                    </p>
+                    <div class="frente">
+                        <span class="tipo-card">Pergunta</span>
+
+                        <h3>Como uma estrela se forma?</h3>
+
+                        <img src="nebulosa.jpg"
+                            alt="Imagem de uma nebulosa">
+
+                        <p>Como uma estrela se forma?</p>
+                    </div>
+
+                    <div class="verso">
+                        <span class="tipo-card">Resposta</span>
+
+                        <h3>Formação estelar</h3>
+
+                        <p>
+                            Uma estrela se forma a partir do colapso de uma nuvem de gás e poeira,
+                            principalmente hidrogênio, devido à gravidade.
+                        </p>
+                    </div>
+
                 </div>
+            </article>
 
-            </div>
-        </div>
+            <!-- EVOLUÇÃO ESTELAR 3 -->
+            <article class="flashcard">
+                <div class="card">
 
+                    <div class="frente">
+                        <span class="tipo-card">Pergunta</span>
 
-        <!-- EVOLUÇÃO ESTELAR 3 -->
-        <div class="flashcard">
-            <div class="card">
+                        <h3>O que acontece com uma estrela quando o hidrogênio acaba?</h3>
 
-                <div class="frente">
-                    <h2>Pergunta</h2>
+                        <img src="gigante-vermelha.jpg"
+                            alt="Imagem de uma gigante vermelha">
 
-                    <img src="gigante-vermelha.jpg" alt="Imagem de uma gigante vermelha">
+                        <p>
+                            O que acontece com uma estrela quando o hidrogênio acaba?
+                        </p>
+                    </div>
 
-                    <p>
-                        O que acontece com uma estrela quando o hidrogênio acaba?
-                    </p>
+                    <div class="verso">
+                        <span class="tipo-card">Resposta</span>
+
+                        <h3>Novas etapas</h3>
+
+                        <p>
+                            A estrela passa por mudanças e pode começar a fundir elementos
+                            mais pesados, dependendo de sua massa.
+                        </p>
+                    </div>
+
                 </div>
+            </article>
 
-                <div class="verso">
-                    <h2>Novas etapas</h2>
+            <!-- ELEMENTOS QUÍMICOS 4 -->
+            <article class="flashcard">
+                <div class="card">
 
-                    <p>
-                        A estrela passa por mudanças e pode começar a fundir elementos
-                        mais pesados, dependendo de sua massa.
-                    </p>
+                    <div class="frente">
+                        <span class="tipo-card">Pergunta</span>
+
+                        <h3>Quais são os principais elementos presentes nas estrelas?</h3>
+
+                        <img src="hidrogenio-helio.jpg"
+                            alt="Representação do hidrogênio e do hélio">
+
+                        <p>
+                            Quais são os principais elementos presentes nas estrelas?
+                        </p>
+                    </div>
+
+                    <div class="verso">
+                        <span class="tipo-card">Resposta</span>
+
+                        <h3>Hidrogênio e Hélio</h3>
+
+                        <p>
+                            Os principais elementos são o hidrogênio e o hélio.
+                            Outros elementos podem ser formados durante a evolução da estrela.
+                        </p>
+                    </div>
+
                 </div>
+            </article>
 
-            </div>
-        </div>
+            <!-- ELEMENTOS QUÍMICOS 5 -->
+            <article class="flashcard">
+                <div class="card">
 
+                    <div class="frente">
+                        <span class="tipo-card">Pergunta</span>
 
-        <!-- ELEMENTOS QUÍMICOS 4 -->
-        <div class="flashcard">
-            <div class="card">
+                        <h3>Como elementos químicos mais pesados são formados nas estrelas?</h3>
 
-                <div class="frente">
-                    <h2>Pergunta</h2>
+                        <img src="fusao-nuclear.jpg"
+                            alt="Representação da fusão nuclear">
 
-                    <img src="hidrogenio-helio.jpg" alt="Representação do hidrogênio e hélio">
+                        <p>
+                            Como elementos químicos mais pesados são formados nas estrelas?
+                        </p>
+                    </div>
 
-                    <p>
-                        Quais são os principais elementos presentes nas estrelas?
-                    </p>
+                    <div class="verso">
+                        <span class="tipo-card">Resposta</span>
+
+                        <h3>Fusão nuclear</h3>
+
+                        <p>
+                            No interior das estrelas, reações de fusão nuclear podem transformar
+                            elementos mais leves em elementos mais pesados.
+                        </p>
+                    </div>
+
                 </div>
+            </article>
 
-                <div class="verso">
-                    <h2>Hidrogênio e Hélio</h2>
+        </section>
 
-                    <p>
-                        Os principais elementos são o hidrogênio e o hélio.
-                        Outros elementos podem ser formados durante a evolução da estrela.
-                    </p>
-                </div>
+    </main>
 
-            </div>
-        </div>
+    <footer class="rodape">
+        <p>Projeto de Flashcards de Astronomia</p>
+    </footer>
 
-
-        <!-- ELEMENTOS QUÍMICOS 5 -->
-        <div class="flashcard">
-            <div class="card">
-
-                <div class="frente">
-                    <h2>Pergunta</h2>
-
-                    <img src="fusao-nuclear.jpg" alt="Representação da fusão nuclear">
-
-                    <p>
-                        Como elementos químicos mais pesados são formados nas estrelas?
-                    </p>
-                </div>
-
-                <div class="verso">
-                    <h2>Fusão nuclear</h2>
-
-                    <p>
-                        No interior das estrelas, reações de fusão nuclear podem transformar
-                        elementos mais leves em elementos mais pesados.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
+    <script src="script.js"></script>
 
 </body>
 
