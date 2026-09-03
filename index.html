@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards - Evolução Estelar</title>
+    <title>Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,159 +12,139 @@
 
     <h1>Flashcards</h1>
 
-    <!-- Conteúdo principal -->
-    <main>
+    <div class="container">
 
-        <!-- Área onde as informações do cartão serão mostradas -->
-        <section class="lado-esquerdo">
+        <!-- EVOLUÇÃO ESTELAR 1 -->
+        <div class="flashcard">
+            <div class="card">
 
-            <section class="coluna">
+                <div class="frente">
+                    <h2>Pergunta</h2>
 
-                <h2 id="textoprincipal" tabindex="1">
-                    Evolução Estelar
-                </h2>
+                    <img src="ciclo-de-vida-estelar2.jpg" alt="Imagem de uma estrela">
 
-                <p id="texto" tabindex="2">
-                    Clique em um dos cartões para conhecer mais sobre
-                    a evolução das estrelas e os elementos químicos.
-                </p>
+                    <p>O que é evolução estelar?</p>
+                </div>
 
-                <img
-                    id="imagemPrincipal"
-                    src="ciclo-de-vida-estelar2.jpg"
-                    alt="Imagem de uma estrela"
-                    tabindex="3"
-                >
+                <div class="verso">
+                    <h2>Evolução das estrelas</h2>
 
-                <figcaption tabindex="4">
-                    <p id="descrevefigura">
-                        Imagem representando uma estrela.
+                    <p>
+                        É o conjunto de mudanças que uma estrela sofre durante sua vida,
+                        desde sua formação até seu estágio final.
                     </p>
-                </figcaption>
-
-            </section>
-
-        </section>
-
-
-        <!-- Cartões -->
-        <section class="container">
-
-            <!-- CARTÃO 1 -->
-            <div
-                class="flashcard"
-                onkeydown="trocarImagem('1', event)"
-                onclick="trocarImagem('1', event)"
-                tabindex="5"
-            >
-                <div class="card">
-
-                    <div class="frente">
-                        <h2>Pergunta</h2>
-                        <p>O que é evolução estelar?</p>
-                    </div>
-
-                    <div class="verso">
-                        <p>Clique para ver a resposta</p>
-                    </div>
-
                 </div>
+
             </div>
+        </div>
 
 
-            <!-- CARTÃO 2 -->
-            <div
-                class="flashcard"
-                onkeydown="trocarImagem('2', event)"
-                onclick="trocarImagem('2', event)"
-                tabindex="6"
-            >
-                <div class="card">
+        <!-- EVOLUÇÃO ESTELAR 2 -->
+        <div class="flashcard">
+            <div class="card">
 
-                    <div class="frente">
-                        <h2>Pergunta</h2>
-                        <p>Como uma estrela se forma?</p>
-                    </div>
+                <div class="frente">
+                    <h2>Pergunta</h2>
 
-                    <div class="verso">
-                        <p>Clique para ver a resposta</p>
-                    </div>
+                    <img src="nebulosa.jpg" alt="Imagem de uma nebulosa">
 
+                    <p>Como uma estrela se forma?</p>
                 </div>
-            </div>
 
+                <div class="verso">
+                    <h2>Formação estelar</h2>
 
-            <!-- CARTÃO 3 -->
-            <div
-                class="flashcard"
-                onkeydown="trocarImagem('3', event)"
-                onclick="trocarImagem('3', event)"
-                tabindex="7"
-            >
-                <div class="card">
-
-                    <div class="frente">
-                        <h2>Pergunta</h2>
-                        <p>O que acontece quando o hidrogênio acaba?</p>
-                    </div>
-
-                    <div class="verso">
-                        <p>Clique para ver a resposta</p>
-                    </div>
-
+                    <p>
+                        Uma estrela se forma a partir do colapso de uma nuvem de gás e poeira,
+                        principalmente hidrogênio, devido à gravidade.
+                    </p>
                 </div>
+
             </div>
+        </div>
 
 
-            <!-- CARTÃO 4 -->
-            <div
-                class="flashcard"
-                onkeydown="trocarImagem('4', event)"
-                onclick="trocarImagem('4', event)"
-                tabindex="8"
-            >
-                <div class="card">
+        <!-- EVOLUÇÃO ESTELAR 3 -->
+        <div class="flashcard">
+            <div class="card">
 
-                    <div class="frente">
-                        <h2>Pergunta</h2>
-                        <p>Quais são os principais elementos das estrelas?</p>
-                    </div>
+                <div class="frente">
+                    <h2>Pergunta</h2>
 
-                    <div class="verso">
-                        <p>Clique para ver a resposta</p>
-                    </div>
+                    <img src="gigante-vermelha.jpg" alt="Imagem de uma gigante vermelha">
 
+                    <p>
+                        O que acontece com uma estrela quando o hidrogênio acaba?
+                    </p>
                 </div>
-            </div>
 
+                <div class="verso">
+                    <h2>Novas etapas</h2>
 
-            <!-- CARTÃO 5 -->
-            <div
-                class="flashcard"
-                onkeydown="trocarImagem('5', event)"
-                onclick="trocarImagem('5', event)"
-                tabindex="9"
-            >
-                <div class="card">
-
-                    <div class="frente">
-                        <h2>Pergunta</h2>
-                        <p>Como elementos mais pesados são formados?</p>
-                    </div>
-
-                    <div class="verso">
-                        <p>Clique para ver a resposta</p>
-                    </div>
-
+                    <p>
+                        A estrela passa por mudanças e pode começar a fundir elementos
+                        mais pesados, dependendo de sua massa.
+                    </p>
                 </div>
+
             </div>
-
-        </section>
-
-    </main>
+        </div>
 
 
-    <script src="script.js"></script>
+        <!-- ELEMENTOS QUÍMICOS 4 -->
+        <div class="flashcard">
+            <div class="card">
+
+                <div class="frente">
+                    <h2>Pergunta</h2>
+
+                    <img src="hidrogenio-helio.jpg" alt="Representação do hidrogênio e hélio">
+
+                    <p>
+                        Quais são os principais elementos presentes nas estrelas?
+                    </p>
+                </div>
+
+                <div class="verso">
+                    <h2>Hidrogênio e Hélio</h2>
+
+                    <p>
+                        Os principais elementos são o hidrogênio e o hélio.
+                        Outros elementos podem ser formados durante a evolução da estrela.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ELEMENTOS QUÍMICOS 5 -->
+        <div class="flashcard">
+            <div class="card">
+
+                <div class="frente">
+                    <h2>Pergunta</h2>
+
+                    <img src="fusao-nuclear.jpg" alt="Representação da fusão nuclear">
+
+                    <p>
+                        Como elementos químicos mais pesados são formados nas estrelas?
+                    </p>
+                </div>
+
+                <div class="verso">
+                    <h2>Fusão nuclear</h2>
+
+                    <p>
+                        No interior das estrelas, reações de fusão nuclear podem transformar
+                        elementos mais leves em elementos mais pesados.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
