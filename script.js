@@ -1,116 +1,127 @@
-function trocarImagem(escolha, event) {
 
-    if (event.type === "click" || event.key === "Enter") {
+// ==========================================
+// VIRADA DOS FLASHCARDS
+// ==========================================
 
-        const imagemnova = document.getElementById("imagemPrincipal");
+const flashcards = document.querySelectorAll(".flashcard");
 
-        let urlNova = "";
-        let textoprincipal = document.getElementById("textoprincipal");
-        let texto = document.getElementById("texto");
-        let descrevefigura = document.getElementById("descrevefigura");
+flashcards.forEach((flashcard) => {
+    flashcard.addEventListener("click", () => {
+        flashcard.classList.toggle("virado");
+    });
 
+    flashcard.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            flashcard.classList.toggle("virado");
+        }
+    });
 
-        switch (escolha) {
+    flashcard.setAttribute("tabindex", "0");
+    flashcard.setAttribute("role", "button");
+    flashcard.setAttribute(
+        "aria-label",
+        "Clique para virar o flashcard"
+    );
+});
 
-            case "1":
+// ==========================================
+// TAMANHO DE FONTES
+// ==========================================
 
-                urlNova = "estrela.jpg";
+let tamanhoFonteAtual = 16;
 
-                textoprincipal.innerText =
-                    "O que é evolução estelar?";
+const valorAdicionado = 2;
+const valorSubtraido = 2;
 
-                texto.innerText =
-                    "Evolução estelar é o conjunto de mudanças que uma estrela sofre durante sua vida, desde sua formação até seu estágio final.";
+const btnAumentaFonte =
+    document.getElementById("btnAumentaTexto");
 
-                descrevefigura.innerText =
-                    "Imagem representando uma estrela em sua evolução.";
+const btnDiminuiFonte =
+    document.getElementById("btnDiminuiTexto");
 
-                break;
+const btnRestauraFonte =
+    document.getElementById("btnRestauraTexto");
 
+btnAumentaFonte.addEventListener("click", aumentaFonte);
+btnDiminuiFonte.addEventListener("click", diminuiFonte);
+btnRestauraFonte.addEventListener("click", restauraFonte);
 
-            case "2":
+function aumentaFonte() {
+    tamanhoFonteAtual = tamanhoFonteAtual + valorAdicionado;
+    document.documentElement.style.fontSize =
+        `${tamanhoFonteAtual}px`;
+}
 
-                urlNova = "nebulosa.jpg";
+function diminuiFonte() {
+    tamanhoFonteAtual = tamanhoFonteAtual - valorSubtraido;
 
-                textoprincipal.innerText =
-                    "Como uma estrela se forma?";
+    if (tamanhoFonteAtual < 10) {
+        tamanhoFonteAtual = 10;
+    }
 
-                texto.innerText =
-                    "Uma estrela se forma a partir do colapso de uma nuvem de gás e poeira, principalmente hidrogênio, devido à gravidade.";
+    document.documentElement.style.fontSize =
+        `${tamanhoFonteAtual}px`;
+}
 
-                descrevefigura.innerText =
-                    "Imagem de uma nebulosa, região onde novas estrelas podem se formar.";
+function restauraFonte() {
+    tamanhoFonteAtual = 16;
 
-                break;
+    document.documentElement.style.fontSize =
+        `${tamanhoFonteAtual}px`;
+}
 
+// ==========================================
+// LEITURA EM VOZ ALTA
+// ==========================================
 
-            case "3":
+let lendo = false;
 
-                urlNova = "gigante-vermelha.jpg";
+const btnOuvir = document.getElementById("btnOuvir");
+const statusLeitura = document.getElementById("statusLeitura");
 
-                textoprincipal.innerText =
-                    "O que acontece quando o hidrogênio acaba?";
+btnOuvir.addEventListener("click", lerEmVozAlta);
 
-                texto.innerText =
-                    "Quando o hidrogênio disponível para a fusão diminui, a estrela passa para novas etapas de sua evolução e pode começar a fundir elementos mais pesados, dependendo de sua massa.";
+function lerEmVozAlta() {
 
-                descrevefigura.innerText =
-                    "Imagem representando uma estrela gigante vermelha.";
+    if (lendo == true) {
 
-                break;
-
-
-            case "4":
-
-                urlNova = "hidrogenio-helio.jpg";
-
-                textoprincipal.innerText =
-                    "Quais são os principais elementos das estrelas?";
-
-                texto.innerText =
-                    "Os principais elementos presentes nas estrelas são o hidrogênio e o hélio. Outros elementos podem ser formados durante a evolução estelar.";
-
-                descrevefigura.innerText =
-                    "Representação dos elementos hidrogênio e hélio.";
-
-                break;
-
-
-            case "5":
-
-                urlNova = "fusao-nuclear.jpg";
-
-                textoprincipal.innerText =
-                    "Como elementos mais pesados são formados?";
-
-                texto.innerText =
-                    "No interior das estrelas, reações de fusão nuclear podem transformar elementos mais leves em elementos mais pesados.";
-
-                descrevefigura.innerText =
-                    "Representação da fusão nuclear no interior de uma estrela.";
-
-                break;
-
-
-            default:
-
-                urlNova = "estrela.jpg";
-
-                textoprincipal.innerText =
-                    "Evolução Estelar";
-
-                texto.innerText =
-                    "Clique em um dos cartões para conhecer mais sobre a evolução das estrelas e os elementos químicos.";
-
-                descrevefigura.innerText =
-                    "Imagem representando uma estrela.";
-
-                break;
+        if (speechSynthesis.paused == true) {
+            speechSynthesis.resume();
+            statusLeitura.textContent = "Leitura continuando...";
+        } else {
+            speechSynthesis.pause();
+            statusLeitura.textContent = "Leitura pausada.";
         }
 
-
-        imagemnova.src = urlNova;
-
-        textoprincipal.focus();
+        return;
     }
+
+    const texto = document.body.innerText;
+
+    const fala = new SpeechSynthesisUtterance(texto);
+
+    fala.lang = "pt-BR";
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(fala);
+
+    lendo = true;
+
+    statusLeitura.textContent = "Leitura iniciada.";
+
+    fala.onend = finalizarLeitura;
 }
+
+function finalizarLeitura() {
+    lendo = false;
+    statusLeitura.textContent = "Leitura finalizada.";
+}
+
+// ==========================================
+// CANCELAR LEITURA AO SAIR DA PÁGINA
+// ==========================================
+
+window.addEventListener("beforeunload", () => {
+    speechSynthesis.cancel();
+});
